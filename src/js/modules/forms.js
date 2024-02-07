@@ -51,7 +51,11 @@ const forms = (state) => {
             .catch(() => statusMessage.textContent = message.failure)
             .finally(() => {
                 clearInputs();
+                if (item.getAttribute('data-calc') == 'end'){
+                    setTimeout(() => document.querySelector('.popup_calc_end').style.display = 'none', 1500);
+                } else {
                 setTimeout(() => statusMessage.remove(), 5000);
+                }
             })
         })
     })
