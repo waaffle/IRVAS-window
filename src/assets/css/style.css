@@ -888,6 +888,7 @@ textarea:focus {
   background: transparent;
 }
 
+
 .popup_calc {
   display: none;
   position: fixed;
@@ -932,6 +933,7 @@ textarea:focus {
   display: none;
   margin-bottom: 3rem;
   width: 30rem;
+  max-height: 15rem;
 }
 
 .popup_calc_content #type1 {
@@ -989,7 +991,7 @@ textarea:focus {
 
 .popup_calc_profile_content {
   position: fixed;
-  top: 10%;
+  top: 2%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
