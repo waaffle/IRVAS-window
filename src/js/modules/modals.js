@@ -4,8 +4,8 @@ const modals = (isFulled1 = false, isFulled2 = false) => {
         const trigger = document.querySelectorAll(triggerSelector),
         modal = document.querySelector(modalSelector),
         close = document.querySelector(closeSelector),
-        windows = document.querySelectorAll('[data-modal]');
-
+        windows = document.querySelectorAll('[data-modal]'),
+        scroll = calcScroll();
 
         trigger.forEach(item => {
             item.addEventListener('click', (e) => {
@@ -18,6 +18,7 @@ const modals = (isFulled1 = false, isFulled2 = false) => {
     
                 modal.style.display = "block";
                 document.body.classList.add('modal-open');
+                document.body.style.marginRight = `${scroll}px`;
         })
         });
 
@@ -31,6 +32,7 @@ const modals = (isFulled1 = false, isFulled2 = false) => {
 
             modal.style.display = "none";
             document.body.classList.remove('modal-open');
+            document.body.style.marginRight = '0px';
         })
 
         modal.addEventListener('click', (e) => {
@@ -42,8 +44,24 @@ const modals = (isFulled1 = false, isFulled2 = false) => {
 
                 modal.style.display = "none";
                 document.body.classList.remove('modal-open');
+                document.body.style.marginRight = '0px';
             }
         })
+    }
+
+    function calcScroll(){
+        let div = document.createElement('div');
+
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+
+        // мы должны вставить элемент в документ, иначе размеры будут равны 0
+        document.body.append(div);
+        let scrollWidth = div.offsetWidth - div.clientWidth;
+
+        div.remove();
+        return scrollWidth;
     }
 
     bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
@@ -58,12 +76,12 @@ const modals = (isFulled1 = false, isFulled2 = false) => {
     
     
 
-    // setTimeout(() => {
-    //     let modal = document.querySelector('.popup');
+    setTimeout(() => {
+        let modal = document.querySelector('.popup');
 
-    //     modal.style.display = "block";
-    //     document.body.classList.add('modal-open');
-    // }, 60000);
+        modal.style.display = "block";
+        document.body.classList.add('modal-open');
+    }, 60000);
 }
 
 export default modals;
