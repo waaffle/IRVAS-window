@@ -56,13 +56,14 @@ const modals = (isFulled1 = false, isFulled2 = false) => {
     bindModal('.popup_calc_profile_button', '.popup_calc_end', '.popup_calc_end_close', false);
     }
     
+    
 
-    setTimeout(() => {
-        let modal = document.querySelector('.popup');
+    // setTimeout(() => {
+    //     let modal = document.querySelector('.popup');
 
-        modal.style.display = "block";
-        document.body.classList.add('modal-open');
-    }, 60000);
+    //     modal.style.display = "block";
+    //     document.body.classList.add('modal-open');
+    // }, 60000);
 }
 
 export default modals;
