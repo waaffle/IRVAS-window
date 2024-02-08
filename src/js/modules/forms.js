@@ -52,7 +52,10 @@ const forms = (state) => {
             .finally(() => {
                 clearInputs();
                 if (item.getAttribute('data-calc') == 'end'){
-                    setTimeout(() => document.querySelector('.popup_calc_end').style.display = 'none', 1500);
+                    setTimeout(() => {
+                    document.querySelector('.popup_calc_end').style.display = 'none';
+                    document.body.classList.remove('modal-open');                    
+                }, 1000);
                 } else {
                 setTimeout(() => statusMessage.remove(), 5000);
                 }
