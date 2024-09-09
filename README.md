@@ -1,1 +1,1 @@
-In this project, I already had HTML-code, I added native javascript to it. Requirements specification is in the file "Window.docx"
+В этом проекте у меня уже был сверстанный макет, я его "оживила" при помощи js. Техническое задание находится в файле "Window.docx"
